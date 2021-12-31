@@ -22,7 +22,7 @@ const TodoList = () => {
 
 
 
-    const agregarTodo = todo => {
+    const agregarTodo = (todo) => {
             setTodos( () => [...todos, todo])
     }
 
@@ -30,9 +30,9 @@ const TodoList = () => {
         setTodos(() => todos.filter(item => item.id !== id))
     }
     const editarTodo = (id) => {
-        const editarTodos = todos.map(item => (
-            item.id === id && {...item, estado: !item.estado}
-        ))
+        const editarTodos = todos.map((item) => 
+            item.id === id ? {...item, estado: !item.estado} : item
+        )
         setTodos(editarTodos)
     }
 
